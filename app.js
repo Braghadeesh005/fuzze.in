@@ -17,7 +17,7 @@ app.use(passport.initialize());
 // app.use(cors());
 app.use(
     cors({
-      origin: ["https://fuzze-one.vercel.app"],
+      origin: ["https://fuzze-in.vercel.app"],
       methods: ["GET", "POST", "PUT", "UPDATE", "DELETE"],
       credentials: true,
       allowedHeaders: ["Content-Type", "Authorization"],
