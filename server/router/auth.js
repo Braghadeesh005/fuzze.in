@@ -39,6 +39,10 @@ const instance = new razorpay({
   router.get("/",(req,res)=>{
 	res.send("hello");
   })
+
+  router.get("/a",(req,res)=>{
+	res.send("helloa");
+  })
 // ---------------------------------------------------------------------------------   GOOGLE OAUTH 2     --------------------------------------------------------------------------------------
 
 //signup - strategy
