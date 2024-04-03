@@ -14,15 +14,15 @@ dotenv.config();
 app.use(passport.initialize());
  
 //cors gateway to client
-app.use(cors());
-// app.use(
-//     cors({
-//       origin: ["https://fuzze-one.vercel.app"],
-//       methods: ["GET", "POST", "PUT", "UPDATE", "DELETE"],
-//       credentials: true,
-//       allowedHeaders: ["Content-Type", "Authorization"],
-//     })
-// );
+// app.use(cors());
+app.use(
+    cors({
+      origin: ["https://fuzze-in.vercel.app"],
+      methods: ["GET", "POST", "PUT", "UPDATE", "DELETE"],
+      credentials: true,
+      allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
 
 //Connect to the DB
 require('./db/dbconn');
