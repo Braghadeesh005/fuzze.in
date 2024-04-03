@@ -53,7 +53,7 @@ const Login = () => {
         return;
       }
 
-      axios.post('https://fl7kprgluvlwedmtkspbg6j5si0xgaat.lambda-url.eu-north-1.on.aws/user-register', formData, {
+      axios.post('https://fuzze-api.vercel.app/user-register', formData, {
         withCredentials: true,
       })
       .then((response) => {
