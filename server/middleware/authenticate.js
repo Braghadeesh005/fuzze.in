@@ -14,6 +14,7 @@ try{
     next();
 }catch(err){
     res.status(401).send('Unauthorized:No Token Provided');
+    console.log(req.cookies);
     console.log(err);
 }
 }
