@@ -35,6 +35,10 @@ const instance = new razorpay({
 	key_secret:process.env.SECRET,
   })
 
+
+  router.get("/",(req,res)=>{
+	res.send("hello");
+  })
 // ---------------------------------------------------------------------------------   GOOGLE OAUTH 2     --------------------------------------------------------------------------------------
 
 //signup - strategy
