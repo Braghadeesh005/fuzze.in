@@ -35,7 +35,9 @@ app.use(express.urlencoded({extended:true}));
 const authRoute = require("./router/auth");
 app.use("/", authRoute);
 
-
+app.get("/",(req,res)=>{
+  res.send("hello");
+})
 
 //Rendering Client
 // app.use(express.static("client/dist"));
