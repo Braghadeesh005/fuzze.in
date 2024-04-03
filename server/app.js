@@ -1,39 +1,39 @@
 const express = require('express');
-const cors = require("cors")
+// const cors = require("cors")
 const app = express();
-const path = require('path');
+// const path = require('path');
 
-const dotenv = require('dotenv')
-dotenv.config({path: './config.env' })
-const passport = require("passport");
-const passportStrategy = require("./passport");
-const mongoose =require("mongoose") 
-dotenv.config();
+// const dotenv = require('dotenv')
+// dotenv.config({path: './config.env' })
+// const passport = require("passport");
+// const passportStrategy = require("./passport");
+// const mongoose =require("mongoose") 
+// dotenv.config();
 
-// Google Auth - passport
-app.use(passport.initialize());
+// // Google Auth - passport
+// app.use(passport.initialize());
  
-//cors gateway to client
-app.use(cors());
-// app.use(
-//     cors({
-//       origin: ["https://fuzze-one.vercel.app"],
-//       methods: ["GET", "POST", "PUT", "UPDATE", "DELETE"],
-//       credentials: true,
-//       allowedHeaders: ["Content-Type", "Authorization"],
-//     })
-// );
+// //cors gateway to client
+// app.use(cors());
+// // app.use(
+// //     cors({
+// //       origin: ["https://fuzze-one.vercel.app"],
+// //       methods: ["GET", "POST", "PUT", "UPDATE", "DELETE"],
+// //       credentials: true,
+// //       allowedHeaders: ["Content-Type", "Authorization"],
+// //     })
+// // );
 
-//Connect to the DB
-require('./db/dbconn');
+// //Connect to the DB
+// require('./db/dbconn');
 
-//App-use
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+// //App-use
+// app.use(express.json());
+// app.use(express.urlencoded({extended:true}));
 
-//Router 
-const authRoute = require("./router/auth");
-app.use("/", authRoute);
+// //Router 
+// const authRoute = require("./router/auth");
+// app.use("/", authRoute);
 
 app.get("/",(req,res)=>{
   res.send("hello");
