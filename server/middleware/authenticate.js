@@ -3,6 +3,7 @@ const User = require("../schema/userSchema");
 const authenticate =async (req,res,next) =>
 {
 try{
+    console.log(req.cookies);
     const token = req.cookies.jwtoken;
     const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
     const rootUser = await User.findOne({_id:verifyToken._id,"tokens.token": token});
