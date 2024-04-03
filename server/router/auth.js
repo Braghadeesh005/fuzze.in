@@ -53,7 +53,13 @@ router.get(
 		// successRedirect: process.env.CLIENT_URL,
 		// failureRedirect: "/signup/failed",
 		const token = req.user.token
-		res.cookie("jwtoken", token, { path: '/' },{ expires:new Date(Date.now()+ 25892000),httpOnly: true });
+		res.cookie("jwtoken", token, { 
+			path: '/', 
+			expires: new Date(Date.now() + 25892000), // Set expiration date (in milliseconds)
+			httpOnly: true,
+			secure: true // Send cookie only over HTTPS
+		});
+		
 		console.log("Cookie stored");
 		console.log("========================");
     	res.redirect(process.env.CLIENT_URL);
@@ -91,7 +97,13 @@ router.post('/user-register', async (req, res) => {
 	  }  
 	  const user = new userSchema({ displayName, email, password });
 	  const token = await user.generateAuthToken();
-	  res.cookie("jwtoken", token, { path: '/', expires: new Date(Date.now() + 25892000), httpOnly: true });
+	  res.cookie("jwtoken", token, { 
+		path: '/', 
+		expires: new Date(Date.now() + 25892000), // Set expiration date (in milliseconds)
+		httpOnly: true,
+		secure: true // Send cookie only over HTTPS
+	});
+	
 	  console.log("Cookie stored");
 	  console.log("========================");
 	  const userRegister = await user.save();
@@ -130,7 +142,12 @@ router.post('/user-login', async (req,res)=>{
            else
            { 
 			const token = await userLogin.generateAuthToken();
-			res.cookie("jwtoken", token, { path: '/' },{ expires:new Date(Date.now()+ 25892000),httpOnly: true });
+			res.cookie("jwtoken", token, { 
+				path: '/', 
+				expires: new Date(Date.now() + 25892000), // Set expiration date (in milliseconds)
+				httpOnly: true,
+				secure: true // Send cookie only over HTTPS
+			});
 			console.log("Cookie stored");
 			console.log("========================");
             console.log("User SignIn Successful");
