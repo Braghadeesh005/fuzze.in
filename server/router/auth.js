@@ -57,7 +57,9 @@ router.get(
 			path: '/', 
 			expires: new Date(Date.now() + 25892000), // Set expiration date (in milliseconds)
 			httpOnly: true,
-			secure: true // Send cookie only over HTTPS
+			secure: true, // Send cookie only over HTTPS
+			domain: '.vercel.app', 
+			sameSite: 'none' // if needed, for cross-site requests	
 		});
 		
 		console.log("Cookie stored");
@@ -101,7 +103,9 @@ router.post('/user-register', async (req, res) => {
 		path: '/', 
 		expires: new Date(Date.now() + 25892000), // Set expiration date (in milliseconds)
 		httpOnly: true,
-		secure: true // Send cookie only over HTTPS
+		secure: true, // Send cookie only over HTTPS
+		domain: '.vercel.app', 
+		sameSite: 'none' // if needed, for cross-site requests	
 	});
 	
 	  console.log("Cookie stored");
@@ -146,7 +150,9 @@ router.post('/user-login', async (req,res)=>{
 				path: '/', 
 				expires: new Date(Date.now() + 25892000), // Set expiration date (in milliseconds)
 				httpOnly: true,
-				secure: true // Send cookie only over HTTPS
+				secure: true, // Send cookie only over HTTPS
+				domain: '.vercel.app', 
+        		sameSite: 'none' // if needed, for cross-site requests	
 			});
 			console.log("Cookie stored");
 			console.log("========================");
