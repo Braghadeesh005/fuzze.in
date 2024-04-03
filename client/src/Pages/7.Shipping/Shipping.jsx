@@ -51,7 +51,7 @@ const Shipping = () =>
 
   const userPage = async () =>{
     try{ 
-      const res = await fetch('https://fuzze-one.vercel.app/getData',{
+      const res = await fetch('https://fuzze-api.vercel.app/getData',{
         method:"GET",
         headers:{
           Accept:"application/json",
@@ -139,7 +139,7 @@ const Shipping = () =>
       const {  phone, address, pincode, state } = user;
  
        // Post shipping details
-       const res = await fetch("https://fuzze-one.vercel.app/checkout", {
+       const res = await fetch("https://fuzze-api.vercel.app/checkout", {
          method: "POST",
          headers: {
            "Content-Type": "application/json",
@@ -158,8 +158,8 @@ const Shipping = () =>
       
       //Razorpay  
       const amount = userData.total_amount;
-      const {data:{key}}=await axios.get("https://fuzze-one.vercel.app/api/getkey")
-      const {data:{order}}=await axios.post("https://fuzze-one.vercel.app/checkout1",{amount})
+      const {data:{key}}=await axios.get("https://fuzze-api.vercel.app/api/getkey")
+      const {data:{order}}=await axios.post("https://fuzze-api.vercel.app/checkout1",{amount})
       console.log(window);
       const options ={
         key,
@@ -169,7 +169,7 @@ const Shipping = () =>
         description:"Pay using your preferred payment method",
         image:"https://res.cloudinary.com/ds6pcfz7u/image/upload/v1698600578/logo_tgbpsi.png",
         order_id:order.id,
-        callback_url:"https://fuzze-one.vercel.app/paymentverification",
+        callback_url:"https://fuzze-api.vercel.app/paymentverification",
         prefill:{
           name:"Enter your name",
           email:"Enter your email",

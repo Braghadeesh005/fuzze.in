@@ -4,7 +4,7 @@ const Logout = () => {
 
     const Navigate = useNavigate();
     useEffect(()=>{
-        fetch('https://fuzze-one.vercel.app/logout1',{
+        fetch('https://fuzze-api.vercel.app/logout1',{
             method: "GET",
             headers:{
                 Accept: "application/json",

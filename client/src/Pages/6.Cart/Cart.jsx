@@ -35,7 +35,7 @@ const Cart = () => {
 
   const fetchCartItems = async () => {
     try {
-      const response = await axios.get('https://fuzze-one.vercel.app/cartitems', {
+      const response = await axios.get('https://fuzze-api.vercel.app/cartitems', {
         withCredentials: true,
       });
       const cartItems = response.data.map((item) => ({
@@ -50,7 +50,7 @@ const Cart = () => {
 
   const handleDelete = async (userId) => {
     const response = await axios.delete(
-      `https://fuzze-one.vercel.app/cartitems/${userId}`,
+      `https://fuzze-api.vercel.app/cartitems/${userId}`,
       {
         withCredentials: true,
       }
@@ -63,7 +63,7 @@ const Cart = () => {
   const [userData, setUserData] = useState({});
   const userPage = async () => {
     try {
-      const res = await fetch('https://fuzze-one.vercel.app/getData', {
+      const res = await fetch('https://fuzze-api.vercel.app/getData', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -98,7 +98,7 @@ const Cart = () => {
 
       // Make a POST request to update the cart
       const response = await axios.post(
-        'https://fuzze-one.vercel.app/updateCart',
+        'https://fuzze-api.vercel.app/updateCart',
         { cart: cartData, total },
         {
           withCredentials: true,

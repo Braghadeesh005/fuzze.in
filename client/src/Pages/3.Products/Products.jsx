@@ -24,7 +24,7 @@ function Products() {
   }, []);
 
   const fetchProducts = async () => {
-    const response = await axios.get('https://fuzze-one.vercel.app/products');
+    const response = await axios.get('https://fuzze-api.vercel.app/products');
     setImages(response.data);
     setOriginalImages(response.data);
   };

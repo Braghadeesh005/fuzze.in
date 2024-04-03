@@ -85,7 +85,7 @@ const Home = () => {
     fetchUsers();
   }, []); 
   useEffect(() => {
-    axios.get('https://fuzze-one.vercel.app/product/images')
+    axios.get('https://fuzze-api.vercel.app/product/images')
       .then((response) => {
         setImages(response.data);
       })
@@ -94,7 +94,7 @@ const Home = () => {
       });
   }, []); 
   const fetchUsers = async () => {
-    const response = await axios.get('https://fuzze-one.vercel.app/products');
+    const response = await axios.get('https://fuzze-api.vercel.app/products');
     setImages(response.data);
   }; 
   const filteredImages = images.filter((image) => {

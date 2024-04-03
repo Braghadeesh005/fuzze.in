@@ -13,7 +13,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleGoogleAuthClick = () => {
-    window.open(`https://fuzze-one.vercel.app/auth/google/signup/callback`,'_self');
+    window.open(`https://fuzze-api.vercel.app/auth/google/signup/callback`,'_self');
   };
 
 
@@ -91,7 +91,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    axios.post('https://fuzze-one.vercel.app/user-login', formData1, {
+    axios.post('https://fuzze-api.vercel.app/user-login', formData1, {
       withCredentials: true,
     })
     .then((response) => {

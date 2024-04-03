@@ -14,7 +14,7 @@ const Userdetails = () => {
   const [userData, setuserData] = useState({});
   const userPage = async () =>{
     try{ 
-      const res = await fetch('https://fuzze-one.vercel.app/getData',{
+      const res = await fetch('https://fuzze-api.vercel.app/getData',{
         method:"GET",
         headers:{
           Accept:"application/json",
@@ -42,7 +42,7 @@ const Userdetails = () => {
   const [orderHistory, setOrderHistory] = useState([]);
   useEffect(() => {
   
-    fetch("https://fuzze-one.vercel.app/orderitems", {
+    fetch("https://fuzze-api.vercel.app/orderitems", {
       method: 'GET',
       credentials: 'include', 
     })

@@ -41,7 +41,7 @@ const Footer = () => {
   const handleGoogleAuthClick = () => {
     // Redirect to the Google authentication URL
     window.open(
-      `https://fuzze-one.vercel.app/auth/google/signup/callback`,
+      `https://fuzze-api.vercel.app/auth/google/signup/callback`,
       '_self'
     );
     localStorage.setItem('isLoggedIn', true);
@@ -57,7 +57,7 @@ const Footer = () => {
   {
      e.preventDefault();
      const { message } = user;
-     const res = await fetch("https://fuzze-one.vercel.app/submit-review", {
+     const res = await fetch("https://fuzze-api.vercel.app/submit-review", {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"
