@@ -17,7 +17,7 @@ app.use(passport.initialize());
 // app.use(cors());
 app.use(
     cors({
-      origin: ["https://fuzze-in.vercel.app"],
+      origin: ["https://fuzze-api.vercel.app"],
       methods: ["GET", "POST", "PUT", "UPDATE", "DELETE"],
       credentials: true,
       allowedHeaders: ["Content-Type", "Authorization"],
@@ -36,11 +36,11 @@ const authRoute = require("./router/auth");
 app.use("/", authRoute);
 
 
-//Rendering Client
-// app.use(express.static("client/dist"));
-// app.get("/*",function(req,res) {
-//     res.sendFile(path.join(__dirname, "./client/dist/index.html"));
-// })
+// Rendering Client
+app.use(express.static("client/dist"));
+app.get("/*",function(req,res) {
+    res.sendFile(path.join(__dirname, "./client/dist/index.html"));
+})
                                  
 //PORT
 const PORT = 4000;
